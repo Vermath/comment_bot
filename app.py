@@ -15,14 +15,14 @@ def ask_gpt4o_mini(question):
     response = client.chat.completions.create(
         model="ft:gpt-4o-mini-2024-07-18:market-research-gpt:tessa-test:9qSE52j7",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content": "You are a helpful assistant for Hand the Heat. Your goal is to respond to comments from our users. Do not under any circumstances use proper names in your responses."},
             {"role": "user", "content": question}
         ]
     )
     return response.choices[0].message.content
 
 def main():
-    st.title("GPT-4o Mini Q&A")
+    st.title("Fine Tuned Comment Bot")
 
     # User input
     user_question = st.text_input("Ask a question:")
