@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai_api_key = st.secrets["openai"]["OPENAI_API_KEY"]
 
 def ask_gpt4o_mini(question):
     response = client.chat.completions.create(
